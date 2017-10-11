@@ -27,14 +27,13 @@
    </extension>
    <extension
          point="org.eclipse.ui.commands">
-      <category
-            id="najahcategory.id"
-            name="Sample Category">
-      </category>
       <command
-            categoryId="shapelang.actions.commands.category"
             id="najahcommand.id"
             name="count">
+      </command>
+      <command
+            id="fileCountcommand.id"
+            name="FileDirectoryDetails">
       </command>
    </extension>
    <extension
@@ -43,15 +42,10 @@
             class="shapelang.actions.handlers.CountHandler"
             commandId="najahcommand.id">
       </handler>
-   </extension>
-   <extension
-         point="org.eclipse.ui.bindings">
-      <key
-            commandId="najahcommand.id"
-            contextId="org.eclipse.ui.contexts.window"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+6">
-      </key>
+      <handler
+            class="shapelang.actions.handlers.FileDirectoryHandler"
+            commandId="fileCountcommand.id">
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.menus">
@@ -68,17 +62,71 @@
          </menu>
       </menuContribution>
       <menuContribution
-            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
-         <toolbar
-               id="shapelang.actions.toolbars.sampleToolbar">
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any?after=additions">
+         <menu
+               label="Count">
             <command
-                  commandId="shapelang.actions.commands.sampleCommand"
-                  icon="icons/sample.png"
-                  id="shapelang.actions.toolbars.sampleCommand"
-                  tooltip="Say hello world">
+                  commandId="najahcommand.id"
+                  style="push">
             </command>
-         </toolbar>
+         </menu>
       </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.views.ContentOutline?after=additions ">
+         <menu
+               label="Count">
+            <command
+                  commandId="najahcommand.id"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu?after=window">
+         <menu
+               label="FileDirectory">
+            <command
+                  commandId="fileCountcommand.id"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="shapelang.actions"
+            name="HayaCategory">
+      </category>
+      <view
+            category="shapelang.actions"
+            class="shapelang.actions.views.FileView"
+            icon="icons/sample.png"
+            id="shapelang.actions.views.FileView"
+            inject="true"
+            name="FileDetailView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="shapelang.actions.views.FileView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
    </extension>
 
 </plugin>
