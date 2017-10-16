@@ -66,6 +66,10 @@
             class="shapelang.actions.handlers.ResourceRegisterHandler"
             commandId="text2modelid">
       </handler>
+      <handler
+            class="shapelang.actions.handlers.RegisterMetaModel"
+            commandId="registermmid">
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
@@ -78,14 +82,20 @@
       <key
             commandId="text2modelid"
             contextId="org.eclipse.ui.contexts.window"
-            schemeId="shapelangActions.key1"
-            sequence="shapelangActions.key1">
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+7">
       </key>
       <key
             commandId="showid"
             contextId="org.eclipse.ui.contexts.window"
-            schemeId="shapelangActions.key2"
-            sequence="shapelangActions.key2">
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+8">
+      </key>
+      <key
+            commandId="registermmid"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+9">
       </key>
    </extension>
    <extension
@@ -110,6 +120,11 @@
             <command
                   commandId="showid"
                   label="ShowDetail"
+                  style="push">
+            </command>
+            <command
+                  commandId="registermmid"
+                  label="register Meta Model"
                   style="push">
             </command>
          </menu>
@@ -149,6 +164,11 @@
             categoryId="shapelang.actions.commands.category"
             id="text2modelid"
             name="text2model">
+      </command>
+      <command
+            categoryId="shapelang.actions.commands.category"
+            id="registermmid"
+            name="registerMetaModel">
       </command>
    </extension>
 
