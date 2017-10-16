@@ -67,7 +67,7 @@
             commandId="text2modelid">
       </handler>
       <handler
-            class="shapelang.actions.handlers.RegisterMetaModel"
+            class="shapelang.actions.handlers.RegisterMetaModelHandler"
             commandId="registermmid">
       </handler>
    </extension>

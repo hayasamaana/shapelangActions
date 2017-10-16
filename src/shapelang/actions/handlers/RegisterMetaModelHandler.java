@@ -12,7 +12,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-public class RegisterMetaModel extends AbstractHandler implements IHandler {
+public class RegisterMetaModelHandler extends AbstractHandler implements IHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -26,7 +26,7 @@ public class RegisterMetaModel extends AbstractHandler implements IHandler {
 		String location = ifile.getFullPath().toString();
 		File file = new File(location);
 		RegisterMetaModeel mm = new RegisterMetaModeel(file);
-
+        
 		return null;
 	}
 
