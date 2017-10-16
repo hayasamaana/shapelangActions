@@ -70,6 +70,10 @@
             class="shapelang.actions.handlers.RegisterMetaModelHandler"
             commandId="registermmid">
       </handler>
+      <handler
+            class="shapelang.actions.handlers.FamilyToPersonHandler"
+            commandId="family2personid">
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.bindings">
@@ -127,6 +131,11 @@
                   label="register Meta Model"
                   style="push">
             </command>
+            <command
+                  commandId="family2personid"
+                  label="Family2Person"
+                  style="push">
+            </command>
          </menu>
       </menuContribution>
       <menuContribution
@@ -169,6 +178,11 @@
             categoryId="shapelang.actions.commands.category"
             id="registermmid"
             name="registerMetaModel">
+      </command>
+      <command
+            categoryId="shapelang.actions.commands.category"
+            id="family2personid"
+            name="family2person">
       </command>
    </extension>
 

@@ -1,0 +1,3 @@
+module FamilyToPerson;
+create OUT : MM1 from IN : MM;
+
