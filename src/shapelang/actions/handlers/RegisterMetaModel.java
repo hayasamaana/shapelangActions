@@ -26,6 +26,7 @@ public class RegisterMetaModel extends AbstractHandler implements IHandler {
 		String location = ifile.getFullPath().toString();
 		File file = new File(location);
 		RegisterMetaModeel mm = new RegisterMetaModeel(file);
+
 		return null;
 	}
 
