@@ -12,8 +12,10 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.jface.dialogs.MessageDialog;
 
 import families.impl.FamilyImpl;
+import families.impl.MemberImpl;
 import shapelang.actions.handlers.RegisterMetaModeel;
-import shapelanguage.ATL.files.FamilyToPerson;
+
+import Test.haya.files.*;
 
 
 public class FamilyPerson {
@@ -38,11 +40,11 @@ public class FamilyPerson {
 		    	 
 		    	//new  RegisterMetaModeel(new File(uri.toString()));
 		    	// Generate the target filename
-					final String targetFile =uri.toString().substring(0,uri.toString().lastIndexOf('.'))+"person.ecore";
+					final String targetFile =uri.toString().substring(0,uri.toString().lastIndexOf('.'))+".person.xmi";
 		            // call atl transformation
 					MessageDialog.openInformation(null, "", targetFile);
 					// uri represent input model as xmi
-					FamilyToPerson.main(new String[] {uri.toString(),targetFile});
+			Families2Persons.main(new String[] {uri.toString(),targetFile});
 		 		 return targetFile;
 		     }
 
